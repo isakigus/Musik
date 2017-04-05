@@ -1,6 +1,7 @@
 from django.views import View
 from django.http import JsonResponse
 from music_store.models import Genre, Track, Artist
+from music_store.util import Paginator
 
 
 class Genres(View):
@@ -18,29 +19,13 @@ class GenreChart(View):
 class GenreTable(View):
     def get(self, request, genre_id, page):
         tracks = Track.objects.genre_table(genre_id)
-        total = len(tracks)
-        page = int(page)
-        page_size = 10
-        pages = total // page_size
-
-        l1 = (page - 1) * page_size
-        l2 = page * page_size
-
-        next = page + 1 if page < pages else page
-        prev = page - 1 if page > 1 else 1
-
-        left = page if page - page_size / 2 < 0 else page_size / 2
-        right = pages - page if pages - page < page_size / 2 else page_size / 2
-
-        data = [t for t in tracks][l1:l2]
-        pages_data = [page - left + 1 + i for i in range(int(left))]
-        pages_data += [page + 1 + i for i in range(int(right))]
+        paginator = Paginator(len(tracks), page)
 
         return JsonResponse(
-            {'data': data,
-             'pagination': {'page': page,
-                            'pages': pages,
-                            'page_data': pages_data,
-                            'next': next,
-                            'prev': prev}
+            {'data': [t for t in tracks][paginator.limit1:paginator.limit2],
+             'pagination': {'page': paginator.page,
+                            'pages': paginator.pages,
+                            'page_data': paginator.pages_data,
+                            'next': paginator.next,
+                            'prev': paginator.prev}
              })
