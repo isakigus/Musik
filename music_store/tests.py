@@ -4,7 +4,7 @@ from music_store.models import Track, Album, Artist, Genre
 
 client = Client()
 
-
+"""
 class TestModels(TestCase):
     def setUp(self):
         astist = Artist(name='Space pace')
@@ -22,7 +22,7 @@ class TestModels(TestCase):
         tracks = Track.objects.genre_table(self.genre_id)
 
         print(tracks)
-
+"""
 
 class TestViews(TestCase):
     def test_get_genres_list_response(self):
