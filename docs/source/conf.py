@@ -19,10 +19,16 @@
 import os
 import sys
 
-sys.path.insert(0, os.path.abspath('.'))
-
-root_modules_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.abspath('../..'))
+root_modules_path = os.path.dirname(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(os.path.join(root_modules_path, 'music_store'))
+sys.path.append(os.path.join(root_modules_path))
+
+os.environ['DJANGO_SETTINGS_MODULE'] = 'MusicID.settings'
+import django
+
+django.setup()
 
 # -- General configuration ------------------------------------------------
 

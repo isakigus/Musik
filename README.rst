@@ -1,5 +1,8 @@
+.. image:: https://travis-ci.org/isakigus/Musik.svg?branch=master
+   :target: https://travis-ci.org/isakigus/Musik
+
 .. image:: https://coveralls.io/repos/github/isakigus/Musik/badge.svg?branch=master
-:target: https://coveralls.io/github/isakigus/Musik?branch=master
+   :target: https://coveralls.io/github/isakigus/Musik?branch=master
 
 
 Welcome to MusiK ID's documentation!

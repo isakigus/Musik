@@ -5,7 +5,9 @@ from music_store.util import Paginator
 
 
 class Genres(View):
+    """ View class that return Json encoded list of music genres available"""
     def get(self, request):
+        """ """
         data = {genre.id: genre.name for genre in Genre.objects.all()}
         return JsonResponse(data)
 

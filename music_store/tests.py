@@ -1,8 +1,51 @@
-from django.test import TestCase
+from django.test import TestCase, Client
 from music_store.util import Paginator
+from music_store.models import Track, Album, Artist, Genre
+
+client = Client()
 
 
-# Create your tests here.
+class TestModels(TestCase):
+    def setUp(self):
+        astist = Artist(name='Space pace')
+        astist.save()
+        genre = Genre(name='Techno Space')
+        genre.save()
+        album = Album(title='One', artist=astist)
+        album.save()
+        Track.objects.create(name='Space country',
+                             album=album,
+                             genre=genre)
+        self.genre_id = genre.id
+
+    def test_tacks_query(self):
+        tracks = Track.objects.genre_table(self.genre_id)
+
+        print(tracks)
+
+
+class TestViews(TestCase):
+    def test_get_genres_list_response(self):
+        response = self.client.get('/genres')
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue('application/json' in str(response._headers))
+
+    def test_get_genre_chart_response(self):
+        response = self.client.get('/genre/1/chart')
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue('application/json' in str(response._headers))
+
+    def test_get_genre_table_response(self):
+        response = self.client.get('/genre/1/table/2')
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue('application/json' in str(response._headers))
+
+    def test_get_genres_list_response_redirect(self):
+        response = self.client.get('/genres22/')
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(response.url, '/app/index.html')
+
+
 class TestPaginator(TestCase):
     def test_pages_20_items(self):
         pag = Paginator(20, 1)
@@ -33,8 +76,6 @@ class TestPaginator(TestCase):
         self.assertEquals(pag.prev, 22)
         self.assertEquals(pag.pages_data,
                           [18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28])
-
-        print(pag.pages_data)
 
     def test_pages_last_item(self):
         pag = Paginator(501, 51)

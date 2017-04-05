@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-cd docs/
-rm -r html
-mkdir -p html
-sphinx-apidoc -o . music_store
-sphinx-build -b html source html
+rm -r docs/html
+mkdir -p docs/html
+sphinx-apidoc -o docs/source music_store
+sphinx-build -b html docs/source docs/html
+git add docs
