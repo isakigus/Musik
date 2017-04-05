@@ -1,8 +1,12 @@
 language: python
 python:
-  - "3.5"
-  - "3.6"
-# command to install dependencies
-install: "pip install -r requirements"
-# command to run tests
-script: pytest
+  - 2.7
+  - 3.3
+install:
+  - pip install -r requirements
+script:
+  - coverage run --source=music_store manage.py test
+
+after_success:
+  - build_doc.sh
+  - coveralls

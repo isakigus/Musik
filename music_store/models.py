@@ -164,17 +164,16 @@ class Playlist(models.Model):
 
 
 class Playlisttrack(models.Model):
-    playlistid = models.IntegerField(db_column='PlaylistId', primary_key=True)
-    trackid = models.IntegerField(db_column='TrackId', primary_key=True)
+    playlistid = models.IntegerField(db_column='PlaylistId')
+    trackid = models.IntegerField(db_column='TrackId')
 
     class Meta:
         db_table = 'PlaylistTrack'
-        unique_together = (
-            ('playlistid', 'trackid'), ('playlistid', 'trackid'),)
+        unique_together = (('playlistid', 'trackid'),)
 
 
 class TrackManager(models.Manager):
-    def genre_table(self, genre_id,):
+    def genre_table(self, genre_id, ):
         with connection.cursor() as cursor:
             cursor.execute("""
                 SELECT  t.Name, a.Name, b.Title, t.Milliseconds
