@@ -5,13 +5,22 @@
    :target: https://coveralls.io/github/isakigus/Musik?branch=master
 
 
-Welcome to MusiK ID's documentation!
+Welcome to MusiK project!
 ====================================
 
+**Features:**
 
-* do backend test/coverage
-* integration test and deploy from git with travis
-* fronted test and coverage
+Release 1.0:
+
+- A complete music genres list
+- See the average song lenght by artist for each genere
+- Look up all the genere songs!
+
+**App dcoumentation**
+
+`Musik site <http://isakigus.github.io/Musik>`_
 
 
+Enjoy the groove!
 
+*ID 2017*
