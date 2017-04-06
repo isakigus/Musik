@@ -8,5 +8,4 @@ script:
   - coverage run --source=music_store manage.py test
 
 after_success:
-  - build_doc.sh
   - coveralls

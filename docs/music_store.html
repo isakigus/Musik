@@ -1,0 +1,1254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>music_store package &#8212; MusiK ID 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="music_store" href="modules.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="music-store-package">
+<h1>music_store package<a class="headerlink" href="#music-store-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-music_store.admin">
+<span id="music-store-admin-module"></span><h2>music_store.admin module<a class="headerlink" href="#module-music_store.admin" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-music_store.apps">
+<span id="music-store-apps-module"></span><h2>music_store.apps module<a class="headerlink" href="#module-music_store.apps" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="music_store.apps.MusicStoreConfig">
+<em class="property">class </em><code class="descclassname">music_store.apps.</code><code class="descname">MusicStoreConfig</code><span class="sig-paren">(</span><em>app_name</em>, <em>app_module</em><span class="sig-paren">)</span><a class="headerlink" href="#music_store.apps.MusicStoreConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.apps.config.AppConfig</span></code></p>
+<dl class="attribute">
+<dt id="music_store.apps.MusicStoreConfig.name">
+<code class="descname">name</code><em class="property"> = u'music_store'</em><a class="headerlink" href="#music_store.apps.MusicStoreConfig.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-music_store.models">
+<span id="music-store-models-module"></span><h2>music_store.models module<a class="headerlink" href="#module-music_store.models" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="music_store.models.Album">
+<em class="property">class </em><code class="descclassname">music_store.models.</code><code class="descname">Album</code><span class="sig-paren">(</span><em>id</em>, <em>title</em>, <em>artist</em><span class="sig-paren">)</span><a class="headerlink" href="#music_store.models.Album" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.models.base.Model</span></code></p>
+<dl class="exception">
+<dt id="music_store.models.Album.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#music_store.models.Album.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="music_store.models.Album.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#music_store.models.Album.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Album.artist">
+<code class="descname">artist</code><a class="headerlink" href="#music_store.models.Album.artist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">child.parent</span></code> is a <code class="docutils literal"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Album.artist_id">
+<code class="descname">artist_id</code><a class="headerlink" href="#music_store.models.Album.artist_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Album.id">
+<code class="descname">id</code><a class="headerlink" href="#music_store.models.Album.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Album.objects">
+<code class="descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#music_store.models.Album.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Album.title">
+<code class="descname">title</code><a class="headerlink" href="#music_store.models.Album.title" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Album.track_set">
+<code class="descname">track_set</code><a class="headerlink" href="#music_store.models.Album.track_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">parent.children</span></code> is a <code class="docutils literal"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="music_store.models.Artist">
+<em class="property">class </em><code class="descclassname">music_store.models.</code><code class="descname">Artist</code><span class="sig-paren">(</span><em>id</em>, <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#music_store.models.Artist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.models.base.Model</span></code></p>
+<dl class="exception">
+<dt id="music_store.models.Artist.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#music_store.models.Artist.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="music_store.models.Artist.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#music_store.models.Artist.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Artist.album_set">
+<code class="descname">album_set</code><a class="headerlink" href="#music_store.models.Artist.album_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">parent.children</span></code> is a <code class="docutils literal"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Artist.id">
+<code class="descname">id</code><a class="headerlink" href="#music_store.models.Artist.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Artist.name">
+<code class="descname">name</code><a class="headerlink" href="#music_store.models.Artist.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Artist.objects">
+<code class="descname">objects</code><em class="property"> = &lt;music_store.models.ArtistManager object&gt;</em><a class="headerlink" href="#music_store.models.Artist.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="music_store.models.ArtistManager">
+<em class="property">class </em><code class="descclassname">music_store.models.</code><code class="descname">ArtistManager</code><a class="headerlink" href="#music_store.models.ArtistManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.models.manager.Manager</span></code></p>
+<dl class="method">
+<dt id="music_store.models.ArtistManager.avg_song_length_by_genre">
+<code class="descname">avg_song_length_by_genre</code><span class="sig-paren">(</span><em>genre_id</em><span class="sig-paren">)</span><a class="headerlink" href="#music_store.models.ArtistManager.avg_song_length_by_genre" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="music_store.models.Customer">
+<em class="property">class </em><code class="descclassname">music_store.models.</code><code class="descname">Customer</code><span class="sig-paren">(</span><em>id</em>, <em>firstname</em>, <em>lastname</em>, <em>company</em>, <em>address</em>, <em>city</em>, <em>state</em>, <em>country</em>, <em>postalcode</em>, <em>phone</em>, <em>fax</em>, <em>email</em>, <em>employee</em><span class="sig-paren">)</span><a class="headerlink" href="#music_store.models.Customer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.models.base.Model</span></code></p>
+<dl class="exception">
+<dt id="music_store.models.Customer.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#music_store.models.Customer.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="music_store.models.Customer.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#music_store.models.Customer.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Customer.address">
+<code class="descname">address</code><a class="headerlink" href="#music_store.models.Customer.address" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Customer.city">
+<code class="descname">city</code><a class="headerlink" href="#music_store.models.Customer.city" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Customer.company">
+<code class="descname">company</code><a class="headerlink" href="#music_store.models.Customer.company" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Customer.country">
+<code class="descname">country</code><a class="headerlink" href="#music_store.models.Customer.country" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Customer.email">
+<code class="descname">email</code><a class="headerlink" href="#music_store.models.Customer.email" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Customer.employee">
+<code class="descname">employee</code><a class="headerlink" href="#music_store.models.Customer.employee" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">child.parent</span></code> is a <code class="docutils literal"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Customer.employee_id">
+<code class="descname">employee_id</code><a class="headerlink" href="#music_store.models.Customer.employee_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Customer.fax">
+<code class="descname">fax</code><a class="headerlink" href="#music_store.models.Customer.fax" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Customer.firstname">
+<code class="descname">firstname</code><a class="headerlink" href="#music_store.models.Customer.firstname" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Customer.id">
+<code class="descname">id</code><a class="headerlink" href="#music_store.models.Customer.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Customer.invoice_set">
+<code class="descname">invoice_set</code><a class="headerlink" href="#music_store.models.Customer.invoice_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">parent.children</span></code> is a <code class="docutils literal"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Customer.lastname">
+<code class="descname">lastname</code><a class="headerlink" href="#music_store.models.Customer.lastname" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Customer.objects">
+<code class="descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#music_store.models.Customer.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Customer.phone">
+<code class="descname">phone</code><a class="headerlink" href="#music_store.models.Customer.phone" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Customer.postalcode">
+<code class="descname">postalcode</code><a class="headerlink" href="#music_store.models.Customer.postalcode" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Customer.state">
+<code class="descname">state</code><a class="headerlink" href="#music_store.models.Customer.state" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="music_store.models.Employee">
+<em class="property">class </em><code class="descclassname">music_store.models.</code><code class="descname">Employee</code><span class="sig-paren">(</span><em>id</em>, <em>lastname</em>, <em>firstname</em>, <em>title</em>, <em>reportsto</em>, <em>birthdate</em>, <em>hiredate</em>, <em>address</em>, <em>city</em>, <em>state</em>, <em>country</em>, <em>postalcode</em>, <em>phone</em>, <em>fax</em>, <em>email</em><span class="sig-paren">)</span><a class="headerlink" href="#music_store.models.Employee" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.models.base.Model</span></code></p>
+<dl class="exception">
+<dt id="music_store.models.Employee.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#music_store.models.Employee.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="music_store.models.Employee.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#music_store.models.Employee.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Employee.address">
+<code class="descname">address</code><a class="headerlink" href="#music_store.models.Employee.address" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Employee.birthdate">
+<code class="descname">birthdate</code><a class="headerlink" href="#music_store.models.Employee.birthdate" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Employee.city">
+<code class="descname">city</code><a class="headerlink" href="#music_store.models.Employee.city" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Employee.country">
+<code class="descname">country</code><a class="headerlink" href="#music_store.models.Employee.country" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Employee.customer_set">
+<code class="descname">customer_set</code><a class="headerlink" href="#music_store.models.Employee.customer_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">parent.children</span></code> is a <code class="docutils literal"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Employee.email">
+<code class="descname">email</code><a class="headerlink" href="#music_store.models.Employee.email" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Employee.fax">
+<code class="descname">fax</code><a class="headerlink" href="#music_store.models.Employee.fax" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Employee.firstname">
+<code class="descname">firstname</code><a class="headerlink" href="#music_store.models.Employee.firstname" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Employee.hiredate">
+<code class="descname">hiredate</code><a class="headerlink" href="#music_store.models.Employee.hiredate" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Employee.id">
+<code class="descname">id</code><a class="headerlink" href="#music_store.models.Employee.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Employee.lastname">
+<code class="descname">lastname</code><a class="headerlink" href="#music_store.models.Employee.lastname" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Employee.objects">
+<code class="descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#music_store.models.Employee.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Employee.phone">
+<code class="descname">phone</code><a class="headerlink" href="#music_store.models.Employee.phone" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Employee.postalcode">
+<code class="descname">postalcode</code><a class="headerlink" href="#music_store.models.Employee.postalcode" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Employee.reportsto">
+<code class="descname">reportsto</code><a class="headerlink" href="#music_store.models.Employee.reportsto" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Employee.state">
+<code class="descname">state</code><a class="headerlink" href="#music_store.models.Employee.state" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Employee.title">
+<code class="descname">title</code><a class="headerlink" href="#music_store.models.Employee.title" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="music_store.models.Genre">
+<em class="property">class </em><code class="descclassname">music_store.models.</code><code class="descname">Genre</code><span class="sig-paren">(</span><em>id</em>, <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#music_store.models.Genre" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.models.base.Model</span></code></p>
+<dl class="exception">
+<dt id="music_store.models.Genre.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#music_store.models.Genre.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="music_store.models.Genre.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#music_store.models.Genre.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Genre.id">
+<code class="descname">id</code><a class="headerlink" href="#music_store.models.Genre.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Genre.name">
+<code class="descname">name</code><a class="headerlink" href="#music_store.models.Genre.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Genre.objects">
+<code class="descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#music_store.models.Genre.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Genre.track_set">
+<code class="descname">track_set</code><a class="headerlink" href="#music_store.models.Genre.track_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">parent.children</span></code> is a <code class="docutils literal"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="music_store.models.Invoice">
+<em class="property">class </em><code class="descclassname">music_store.models.</code><code class="descname">Invoice</code><span class="sig-paren">(</span><em>id</em>, <em>customer</em>, <em>invoicedate</em>, <em>billingaddress</em>, <em>billingcity</em>, <em>billingstate</em>, <em>billingcountry</em>, <em>billingpostalcode</em>, <em>total</em><span class="sig-paren">)</span><a class="headerlink" href="#music_store.models.Invoice" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.models.base.Model</span></code></p>
+<dl class="exception">
+<dt id="music_store.models.Invoice.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#music_store.models.Invoice.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="music_store.models.Invoice.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#music_store.models.Invoice.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Invoice.billingaddress">
+<code class="descname">billingaddress</code><a class="headerlink" href="#music_store.models.Invoice.billingaddress" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Invoice.billingcity">
+<code class="descname">billingcity</code><a class="headerlink" href="#music_store.models.Invoice.billingcity" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Invoice.billingcountry">
+<code class="descname">billingcountry</code><a class="headerlink" href="#music_store.models.Invoice.billingcountry" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Invoice.billingpostalcode">
+<code class="descname">billingpostalcode</code><a class="headerlink" href="#music_store.models.Invoice.billingpostalcode" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Invoice.billingstate">
+<code class="descname">billingstate</code><a class="headerlink" href="#music_store.models.Invoice.billingstate" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Invoice.customer">
+<code class="descname">customer</code><a class="headerlink" href="#music_store.models.Invoice.customer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">child.parent</span></code> is a <code class="docutils literal"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Invoice.customer_id">
+<code class="descname">customer_id</code><a class="headerlink" href="#music_store.models.Invoice.customer_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="music_store.models.Invoice.get_next_by_invoicedate">
+<code class="descname">get_next_by_invoicedate</code><span class="sig-paren">(</span><em>*moreargs</em>, <em>**morekwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#music_store.models.Invoice.get_next_by_invoicedate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="music_store.models.Invoice.get_previous_by_invoicedate">
+<code class="descname">get_previous_by_invoicedate</code><span class="sig-paren">(</span><em>*moreargs</em>, <em>**morekwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#music_store.models.Invoice.get_previous_by_invoicedate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Invoice.id">
+<code class="descname">id</code><a class="headerlink" href="#music_store.models.Invoice.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Invoice.invoicedate">
+<code class="descname">invoicedate</code><a class="headerlink" href="#music_store.models.Invoice.invoicedate" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Invoice.invoiceline_set">
+<code class="descname">invoiceline_set</code><a class="headerlink" href="#music_store.models.Invoice.invoiceline_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">parent.children</span></code> is a <code class="docutils literal"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Invoice.objects">
+<code class="descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#music_store.models.Invoice.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Invoice.total">
+<code class="descname">total</code><a class="headerlink" href="#music_store.models.Invoice.total" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="music_store.models.Invoiceline">
+<em class="property">class </em><code class="descclassname">music_store.models.</code><code class="descname">Invoiceline</code><span class="sig-paren">(</span><em>id</em>, <em>invoice</em>, <em>track</em>, <em>unitprice</em>, <em>quantity</em><span class="sig-paren">)</span><a class="headerlink" href="#music_store.models.Invoiceline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.models.base.Model</span></code></p>
+<dl class="exception">
+<dt id="music_store.models.Invoiceline.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#music_store.models.Invoiceline.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="music_store.models.Invoiceline.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#music_store.models.Invoiceline.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Invoiceline.id">
+<code class="descname">id</code><a class="headerlink" href="#music_store.models.Invoiceline.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Invoiceline.invoice">
+<code class="descname">invoice</code><a class="headerlink" href="#music_store.models.Invoiceline.invoice" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">child.parent</span></code> is a <code class="docutils literal"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Invoiceline.invoice_id">
+<code class="descname">invoice_id</code><a class="headerlink" href="#music_store.models.Invoiceline.invoice_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Invoiceline.objects">
+<code class="descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#music_store.models.Invoiceline.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Invoiceline.quantity">
+<code class="descname">quantity</code><a class="headerlink" href="#music_store.models.Invoiceline.quantity" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Invoiceline.track">
+<code class="descname">track</code><a class="headerlink" href="#music_store.models.Invoiceline.track" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">child.parent</span></code> is a <code class="docutils literal"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Invoiceline.track_id">
+<code class="descname">track_id</code><a class="headerlink" href="#music_store.models.Invoiceline.track_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Invoiceline.unitprice">
+<code class="descname">unitprice</code><a class="headerlink" href="#music_store.models.Invoiceline.unitprice" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="music_store.models.Mediatype">
+<em class="property">class </em><code class="descclassname">music_store.models.</code><code class="descname">Mediatype</code><span class="sig-paren">(</span><em>id</em>, <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#music_store.models.Mediatype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.models.base.Model</span></code></p>
+<dl class="exception">
+<dt id="music_store.models.Mediatype.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#music_store.models.Mediatype.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="music_store.models.Mediatype.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#music_store.models.Mediatype.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Mediatype.id">
+<code class="descname">id</code><a class="headerlink" href="#music_store.models.Mediatype.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Mediatype.name">
+<code class="descname">name</code><a class="headerlink" href="#music_store.models.Mediatype.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Mediatype.objects">
+<code class="descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#music_store.models.Mediatype.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Mediatype.track_set">
+<code class="descname">track_set</code><a class="headerlink" href="#music_store.models.Mediatype.track_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">parent.children</span></code> is a <code class="docutils literal"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="music_store.models.Playlist">
+<em class="property">class </em><code class="descclassname">music_store.models.</code><code class="descname">Playlist</code><span class="sig-paren">(</span><em>id</em>, <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#music_store.models.Playlist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.models.base.Model</span></code></p>
+<dl class="exception">
+<dt id="music_store.models.Playlist.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#music_store.models.Playlist.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="music_store.models.Playlist.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#music_store.models.Playlist.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Playlist.id">
+<code class="descname">id</code><a class="headerlink" href="#music_store.models.Playlist.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Playlist.name">
+<code class="descname">name</code><a class="headerlink" href="#music_store.models.Playlist.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Playlist.objects">
+<code class="descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#music_store.models.Playlist.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="music_store.models.Playlisttrack">
+<em class="property">class </em><code class="descclassname">music_store.models.</code><code class="descname">Playlisttrack</code><span class="sig-paren">(</span><em>id</em>, <em>playlistid</em>, <em>trackid</em><span class="sig-paren">)</span><a class="headerlink" href="#music_store.models.Playlisttrack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.models.base.Model</span></code></p>
+<dl class="exception">
+<dt id="music_store.models.Playlisttrack.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#music_store.models.Playlisttrack.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="music_store.models.Playlisttrack.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#music_store.models.Playlisttrack.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Playlisttrack.id">
+<code class="descname">id</code><a class="headerlink" href="#music_store.models.Playlisttrack.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Playlisttrack.objects">
+<code class="descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#music_store.models.Playlisttrack.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Playlisttrack.playlistid">
+<code class="descname">playlistid</code><a class="headerlink" href="#music_store.models.Playlisttrack.playlistid" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Playlisttrack.trackid">
+<code class="descname">trackid</code><a class="headerlink" href="#music_store.models.Playlisttrack.trackid" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="music_store.models.Track">
+<em class="property">class </em><code class="descclassname">music_store.models.</code><code class="descname">Track</code><span class="sig-paren">(</span><em>id</em>, <em>name</em>, <em>album</em>, <em>mediatype</em>, <em>genre</em>, <em>composer</em>, <em>milliseconds</em>, <em>bytes</em>, <em>unitprice</em><span class="sig-paren">)</span><a class="headerlink" href="#music_store.models.Track" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.models.base.Model</span></code></p>
+<dl class="exception">
+<dt id="music_store.models.Track.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#music_store.models.Track.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="music_store.models.Track.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#music_store.models.Track.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Track.album">
+<code class="descname">album</code><a class="headerlink" href="#music_store.models.Track.album" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">child.parent</span></code> is a <code class="docutils literal"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Track.album_id">
+<code class="descname">album_id</code><a class="headerlink" href="#music_store.models.Track.album_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Track.bytes">
+<code class="descname">bytes</code><a class="headerlink" href="#music_store.models.Track.bytes" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Track.composer">
+<code class="descname">composer</code><a class="headerlink" href="#music_store.models.Track.composer" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Track.genre">
+<code class="descname">genre</code><a class="headerlink" href="#music_store.models.Track.genre" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">child.parent</span></code> is a <code class="docutils literal"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Track.genre_id">
+<code class="descname">genre_id</code><a class="headerlink" href="#music_store.models.Track.genre_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Track.id">
+<code class="descname">id</code><a class="headerlink" href="#music_store.models.Track.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Track.invoiceline_set">
+<code class="descname">invoiceline_set</code><a class="headerlink" href="#music_store.models.Track.invoiceline_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">parent.children</span></code> is a <code class="docutils literal"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Track.mediatype">
+<code class="descname">mediatype</code><a class="headerlink" href="#music_store.models.Track.mediatype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">child.parent</span></code> is a <code class="docutils literal"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Track.mediatype_id">
+<code class="descname">mediatype_id</code><a class="headerlink" href="#music_store.models.Track.mediatype_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Track.milliseconds">
+<code class="descname">milliseconds</code><a class="headerlink" href="#music_store.models.Track.milliseconds" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Track.name">
+<code class="descname">name</code><a class="headerlink" href="#music_store.models.Track.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Track.objects">
+<code class="descname">objects</code><em class="property"> = &lt;music_store.models.TrackManager object&gt;</em><a class="headerlink" href="#music_store.models.Track.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="music_store.models.Track.unitprice">
+<code class="descname">unitprice</code><a class="headerlink" href="#music_store.models.Track.unitprice" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="music_store.models.TrackManager">
+<em class="property">class </em><code class="descclassname">music_store.models.</code><code class="descname">TrackManager</code><a class="headerlink" href="#music_store.models.TrackManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.models.manager.Manager</span></code></p>
+<dl class="method">
+<dt id="music_store.models.TrackManager.genre_table">
+<code class="descname">genre_table</code><span class="sig-paren">(</span><em>genre_id</em><span class="sig-paren">)</span><a class="headerlink" href="#music_store.models.TrackManager.genre_table" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-music_store.tests">
+<span id="music-store-tests-module"></span><h2>music_store.tests module<a class="headerlink" href="#module-music_store.tests" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="music_store.tests.TestPaginator">
+<em class="property">class </em><code class="descclassname">music_store.tests.</code><code class="descname">TestPaginator</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#music_store.tests.TestPaginator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<dl class="method">
+<dt id="music_store.tests.TestPaginator.test_pages_20_items">
+<code class="descname">test_pages_20_items</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#music_store.tests.TestPaginator.test_pages_20_items" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="music_store.tests.TestPaginator.test_pages_501_items">
+<code class="descname">test_pages_501_items</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#music_store.tests.TestPaginator.test_pages_501_items" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="music_store.tests.TestPaginator.test_pages_5_items">
+<code class="descname">test_pages_5_items</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#music_store.tests.TestPaginator.test_pages_5_items" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="music_store.tests.TestPaginator.test_pages_first_item">
+<code class="descname">test_pages_first_item</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#music_store.tests.TestPaginator.test_pages_first_item" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="music_store.tests.TestPaginator.test_pages_last_item">
+<code class="descname">test_pages_last_item</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#music_store.tests.TestPaginator.test_pages_last_item" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="music_store.tests.TestPaginator.test_pages_last_item_overflow">
+<code class="descname">test_pages_last_item_overflow</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#music_store.tests.TestPaginator.test_pages_last_item_overflow" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="music_store.tests.TestViews">
+<em class="property">class </em><code class="descclassname">music_store.tests.</code><code class="descname">TestViews</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#music_store.tests.TestViews" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<dl class="method">
+<dt id="music_store.tests.TestViews.test_get_genre_chart_response">
+<code class="descname">test_get_genre_chart_response</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#music_store.tests.TestViews.test_get_genre_chart_response" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="music_store.tests.TestViews.test_get_genre_table_response">
+<code class="descname">test_get_genre_table_response</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#music_store.tests.TestViews.test_get_genre_table_response" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="music_store.tests.TestViews.test_get_genres_list_response">
+<code class="descname">test_get_genres_list_response</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#music_store.tests.TestViews.test_get_genres_list_response" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="music_store.tests.TestViews.test_get_genres_list_response_redirect">
+<code class="descname">test_get_genres_list_response_redirect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#music_store.tests.TestViews.test_get_genres_list_response_redirect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="music_store.tests.client">
+<code class="descclassname">music_store.tests.</code><code class="descname">client</code><em class="property"> = &lt;django.test.client.Client object&gt;</em><a class="headerlink" href="#music_store.tests.client" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>class TestModels(TestCase):</dt>
+<dd><dl class="first last docutils">
+<dt>def setUp(self):</dt>
+<dd><p class="first">astist = Artist(name=&#8217;Space pace&#8217;)
+astist.save()
+genre = Genre(name=&#8217;Techno Space&#8217;)
+genre.save()
+album = Album(title=&#8217;One&#8217;, artist=astist)
+album.save()
+Track.objects.create(name=&#8217;Space country&#8217;,</p>
+<blockquote>
+<div>album=album,
+genre=genre)</div></blockquote>
+<p class="last">self.genre_id = genre.id</p>
+</dd>
+<dt>def test_tacks_query(self):</dt>
+<dd><p class="first">tracks = Track.objects.genre_table(self.genre_id)</p>
+<p class="last">print(tracks)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-music_store.urls">
+<span id="music-store-urls-module"></span><h2>music_store.urls module<a class="headerlink" href="#module-music_store.urls" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-music_store.util">
+<span id="music-store-util-module"></span><h2>music_store.util module<a class="headerlink" href="#module-music_store.util" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="music_store.util.Paginator">
+<em class="property">class </em><code class="descclassname">music_store.util.</code><code class="descname">Paginator</code><span class="sig-paren">(</span><em>total_items</em>, <em>page</em><span class="sig-paren">)</span><a class="headerlink" href="#music_store.util.Paginator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="music_store.util.Paginator.page_size">
+<code class="descname">page_size</code><em class="property"> = 10</em><a class="headerlink" href="#music_store.util.Paginator.page_size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-music_store.views">
+<span id="music-store-views-module"></span><h2>music_store.views module<a class="headerlink" href="#module-music_store.views" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="music_store.views.GenreChart">
+<em class="property">class </em><code class="descclassname">music_store.views.</code><code class="descname">GenreChart</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#music_store.views.GenreChart" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.views.generic.base.View</span></code></p>
+<dl class="method">
+<dt id="music_store.views.GenreChart.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>request</em>, <em>genre_id</em><span class="sig-paren">)</span><a class="headerlink" href="#music_store.views.GenreChart.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="music_store.views.GenreTable">
+<em class="property">class </em><code class="descclassname">music_store.views.</code><code class="descname">GenreTable</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#music_store.views.GenreTable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.views.generic.base.View</span></code></p>
+<dl class="method">
+<dt id="music_store.views.GenreTable.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>request</em>, <em>genre_id</em>, <em>page</em><span class="sig-paren">)</span><a class="headerlink" href="#music_store.views.GenreTable.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="music_store.views.Genres">
+<em class="property">class </em><code class="descclassname">music_store.views.</code><code class="descname">Genres</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#music_store.views.Genres" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.views.generic.base.View</span></code></p>
+<p>View class that return Json encoded list of music genres available</p>
+<dl class="method">
+<dt id="music_store.views.Genres.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#music_store.views.Genres.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-music_store">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-music_store" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">music_store package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-music_store.admin">music_store.admin module</a></li>
+<li><a class="reference internal" href="#module-music_store.apps">music_store.apps module</a></li>
+<li><a class="reference internal" href="#module-music_store.models">music_store.models module</a></li>
+<li><a class="reference internal" href="#module-music_store.tests">music_store.tests module</a></li>
+<li><a class="reference internal" href="#module-music_store.urls">music_store.urls module</a></li>
+<li><a class="reference internal" href="#module-music_store.util">music_store.util module</a></li>
+<li><a class="reference internal" href="#module-music_store.views">music_store.views module</a></li>
+<li><a class="reference internal" href="#module-music_store">Module contents</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">music_store</a><ul>
+      <li>Previous: <a href="modules.html" title="previous chapter">music_store</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/music_store.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, isakigus.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/music_store.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
