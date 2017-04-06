@@ -27,19 +27,19 @@ Steps:
 
 - unizp
 
-   unzip master.zip
+  unzip master.zip
 
 - install dependencies
 
   virtualenv sound
 
-  sound/bin/pip install -r Musik-master/run_requiremnts
+  sound/bin/pip install -r Musik-master/run_requirements
 
 - start app ( test mode )
 
   sound/bin/python Musik-master/manage.py runserver 8999
 
-- Open browser and emjoy
+- Open browser and enjoy
 
   `Musik app <http://127.0.0.1:8999>`_
 
@@ -49,10 +49,10 @@ Steps:
 Release 1.0:
 
 - A complete music genres list
-- See the average song lenght by artist for each genere
+- See the average song length by artist for each genre
 - Look up all the genere songs!
 
-**App dcoumentation**
+**App documentation**
 
 `Musik site <http://isakigus.github.io/Musik>`_
 
