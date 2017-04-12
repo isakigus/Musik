@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>music_store &#8212; MusiK ID 1.0 documentation</title>
+    <title>How to build docs &#8212; MusiK ID 1.0 documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -26,8 +26,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="music_store package" href="music_store.html" />
-    <link rel="prev" title="How to build docs" href="build_docs.html" />
+    <link rel="next" title="music_store" href="modules.html" />
+    <link rel="prev" title="Installation" href="installation.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -43,23 +43,34 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="music-store">
-<h1>music_store<a class="headerlink" href="#music-store" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="music_store.html">music_store package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="music_store.html#module-music_store.admin">music_store.admin module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="music_store.html#module-music_store.apps">music_store.apps module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="music_store.html#module-music_store.models">music_store.models module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="music_store.html#module-music_store.tests">music_store.tests module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="music_store.html#module-music_store.urls">music_store.urls module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="music_store.html#module-music_store.util">music_store.util module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="music_store.html#module-music_store.views">music_store.views module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="music_store.html#module-music_store">Module contents</a></li>
-</ul>
-</li>
-</ul>
+  <div class="section" id="how-to-build-docs">
+<h1>How to build docs<a class="headerlink" href="#how-to-build-docs" title="Permalink to this headline">¶</a></h1>
+<p>Pre requirements:</p>
+<blockquote>
+<div><p><strong>python 3.5</strong></p>
+<p><strong>sphinx &gt;=1.4</strong></p>
+</div></blockquote>
+<p>save following content into /usr/bin/sphinx3-build</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python3</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Same as /usr/bin/sphinx-build but with different</span>
+<span class="sd">interpreter</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">sphinx</span> <span class="kn">import</span> <span class="n">main</span><span class="p">,</span> <span class="n">make_main</span>
+    <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;-M&#39;</span><span class="p">]:</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">make_main</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">main</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">))</span>
+</pre></div>
 </div>
+<p>run build documents script:</p>
+<blockquote>
+<div>./build_docs.sh</div></blockquote>
 </div>
 
 
@@ -71,15 +82,15 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="build_docs.html" title="previous chapter">How to build docs</a></li>
-      <li>Next: <a href="music_store.html" title="next chapter">music_store package</a></li>
+      <li>Previous: <a href="installation.html" title="previous chapter">Installation</a></li>
+      <li>Next: <a href="modules.html" title="next chapter">music_store</a></li>
   </ul></li>
 </ul>
 </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/modules.rst.txt"
+      <li><a href="_sources/build_docs.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -105,7 +116,7 @@
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
-      <a href="_sources/modules.rst.txt"
+      <a href="_sources/build_docs.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

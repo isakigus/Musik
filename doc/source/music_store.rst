@@ -1,8 +1,8 @@
 music_store package
 ===================
 
-Submodules
-----------
+.. toctree::
+   :maxdepth: 2
 
 music_store.admin module
 ------------------------

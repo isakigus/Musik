@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Welcome to MusiK documentation! &#8212; MusiK ID 1.0 documentation</title>
+    <title>Installation &#8212; MusiK ID 1.0 documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -26,7 +26,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Explicación de la solución" href="solution.html" />
+    <link rel="next" title="How to build docs" href="build_docs.html" />
+    <link rel="prev" title="Explicación de la solución" href="solution.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -42,36 +43,35 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="welcome-to-musik-documentation">
-<h1>Welcome to MusiK  documentation!<a class="headerlink" href="#welcome-to-musik-documentation" title="Permalink to this headline">¶</a></h1>
-<img alt="_images/music.png" src="_images/music.png" />
+  <div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Contents:</span></p>
+</div>
+<p>Pre requirements:</p>
+<blockquote>
+<div><p><strong>python(2.7|3.5)</strong></p>
+<p><strong>virtualenv</strong>.</p>
+</div></blockquote>
+<p>For production environment <strong>nginx</strong> and <strong>gunicorn</strong> could be used,or other wgsi servers.</p>
+<p>Further another database could be use.</p>
+<p>Steps:</p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="solution.html">Explicación de la solución</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="solution.html#resources">Resources:</a></li>
-</ul>
+<li><p class="first">download zip</p>
+<p>wget <a class="reference external" href="https://github.com/isakigus/Musik/archive/master.zip">https://github.com/isakigus/Musik/archive/master.zip</a></p>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul class="simple">
-</ul>
+<li><p class="first">unizp</p>
+<p>unzip master.zip</p>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="build_docs.html">How to build docs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">music_store</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="music_store.html">music_store package</a></li>
-</ul>
+<li><p class="first">install dependencies</p>
+<p>virtualenv sound</p>
+<p>sound/bin/pip install -r Musik-master/run_requirements</p>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="testing.html">Frontend Testing</a><ul class="simple">
-</ul>
+<li><p class="first">start app ( test mode )</p>
+<p>sound/bin/python Musik-master/manage.py runserver 8999</p>
 </li>
-</ul>
-</div>
-</div>
-<div class="section" id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
-<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
-<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+<li><p class="first">Open browser and enjoy</p>
+<p><a class="reference external" href="http://127.0.0.1:8999">Musik app</a></p>
+</li>
 </ul>
 </div>
 
@@ -80,24 +80,19 @@
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="#">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Welcome to MusiK  documentation!</a></li>
-<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
-</ul>
-<div class="relations">
+        <div class="sphinxsidebarwrapper"><div class="relations">
 <h3>Related Topics</h3>
 <ul>
-  <li><a href="#">Documentation overview</a><ul>
-      <li>Next: <a href="solution.html" title="next chapter">Explicación de la solución</a></li>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="solution.html" title="previous chapter">Explicación de la solución</a></li>
+      <li>Next: <a href="build_docs.html" title="next chapter">How to build docs</a></li>
   </ul></li>
 </ul>
 </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/index.rst.txt"
+      <li><a href="_sources/installation.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -123,7 +118,7 @@
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
-      <a href="_sources/index.rst.txt"
+      <a href="_sources/installation.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

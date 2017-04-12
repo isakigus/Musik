@@ -26,6 +26,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Frontend Testing" href="testing.html" />
     <link rel="prev" title="music_store" href="modules.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -44,8 +45,7 @@
             
   <div class="section" id="music-store-package">
 <h1>music_store package<a class="headerlink" href="#music-store-package" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
 </div>
 <div class="section" id="module-music_store.admin">
 <span id="music-store-admin-module"></span><h2>music_store.admin module<a class="headerlink" href="#module-music_store.admin" title="Permalink to this headline">¶</a></h2>
@@ -58,7 +58,7 @@
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.apps.config.AppConfig</span></code></p>
 <dl class="attribute">
 <dt id="music_store.apps.MusicStoreConfig.name">
-<code class="descname">name</code><em class="property"> = u'music_store'</em><a class="headerlink" href="#music_store.apps.MusicStoreConfig.name" title="Permalink to this definition">¶</a></dt>
+<code class="descname">name</code><em class="property"> = 'music_store'</em><a class="headerlink" href="#music_store.apps.MusicStoreConfig.name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -86,7 +86,7 @@
 <dt id="music_store.models.Album.artist">
 <code class="descname">artist</code><a class="headerlink" href="#music_store.models.Album.artist" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the related object on the forward side of a many-to-one or
-one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+one-to-one relation.</p>
 <p>In the example:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
@@ -256,7 +256,7 @@ object the first time, the query is executed.</p>
 <dt id="music_store.models.Customer.employee">
 <code class="descname">employee</code><a class="headerlink" href="#music_store.models.Customer.employee" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the related object on the forward side of a many-to-one or
-one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+one-to-one relation.</p>
 <p>In the example:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
@@ -593,7 +593,7 @@ object the first time, the query is executed.</p>
 <dt id="music_store.models.Invoice.customer">
 <code class="descname">customer</code><a class="headerlink" href="#music_store.models.Invoice.customer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the related object on the forward side of a many-to-one or
-one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+one-to-one relation.</p>
 <p>In the example:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
@@ -689,7 +689,7 @@ object the first time, the query is executed.</p>
 <dt id="music_store.models.Invoiceline.invoice">
 <code class="descname">invoice</code><a class="headerlink" href="#music_store.models.Invoiceline.invoice" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the related object on the forward side of a many-to-one or
-one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+one-to-one relation.</p>
 <p>In the example:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
@@ -721,7 +721,7 @@ object the first time, the query is executed.</p>
 <dt id="music_store.models.Invoiceline.track">
 <code class="descname">track</code><a class="headerlink" href="#music_store.models.Invoiceline.track" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the related object on the forward side of a many-to-one or
-one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+one-to-one relation.</p>
 <p>In the example:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
@@ -899,7 +899,7 @@ object the first time, the query is executed.</p>
 <dt id="music_store.models.Track.album">
 <code class="descname">album</code><a class="headerlink" href="#music_store.models.Track.album" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the related object on the forward side of a many-to-one or
-one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+one-to-one relation.</p>
 <p>In the example:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
@@ -933,7 +933,7 @@ object the first time, the query is executed.</p>
 <dt id="music_store.models.Track.genre">
 <code class="descname">genre</code><a class="headerlink" href="#music_store.models.Track.genre" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the related object on the forward side of a many-to-one or
-one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+one-to-one relation.</p>
 <p>In the example:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
@@ -975,7 +975,7 @@ class built by <code class="docutils literal"><span class="pre">create_forward_m
 <dt id="music_store.models.Track.mediatype">
 <code class="descname">mediatype</code><a class="headerlink" href="#music_store.models.Track.mediatype" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accessor to the related object on the forward side of a many-to-one or
-one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+one-to-one relation.</p>
 <p>In the example:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
@@ -1033,6 +1033,22 @@ object the first time, the query is executed.</p>
 </div>
 <div class="section" id="module-music_store.tests">
 <span id="music-store-tests-module"></span><h2>music_store.tests module<a class="headerlink" href="#module-music_store.tests" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="music_store.tests.TestModels">
+<em class="property">class </em><code class="descclassname">music_store.tests.</code><code class="descname">TestModels</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#music_store.tests.TestModels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<dl class="method">
+<dt id="music_store.tests.TestModels.test_avg_song_length_by_genre_query">
+<code class="descname">test_avg_song_length_by_genre_query</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#music_store.tests.TestModels.test_avg_song_length_by_genre_query" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="music_store.tests.TestModels.test_tracks_query">
+<code class="descname">test_tracks_query</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#music_store.tests.TestModels.test_tracks_query" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 <dl class="class">
 <dt id="music_store.tests.TestPaginator">
 <em class="property">class </em><code class="descclassname">music_store.tests.</code><code class="descname">TestPaginator</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#music_store.tests.TestPaginator" title="Permalink to this definition">¶</a></dt>
@@ -1093,34 +1109,6 @@ object the first time, the query is executed.</p>
 <code class="descname">test_get_genres_list_response_redirect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#music_store.tests.TestViews.test_get_genres_list_response_redirect" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-</dd></dl>
-
-<dl class="data">
-<dt id="music_store.tests.client">
-<code class="descclassname">music_store.tests.</code><code class="descname">client</code><em class="property"> = &lt;django.test.client.Client object&gt;</em><a class="headerlink" href="#music_store.tests.client" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>class TestModels(TestCase):</dt>
-<dd><dl class="first last docutils">
-<dt>def setUp(self):</dt>
-<dd><p class="first">astist = Artist(name=&#8217;Space pace&#8217;)
-astist.save()
-genre = Genre(name=&#8217;Techno Space&#8217;)
-genre.save()
-album = Album(title=&#8217;One&#8217;, artist=astist)
-album.save()
-Track.objects.create(name=&#8217;Space country&#8217;,</p>
-<blockquote>
-<div>album=album,
-genre=genre)</div></blockquote>
-<p class="last">self.genre_id = genre.id</p>
-</dd>
-<dt>def test_tacks_query(self):</dt>
-<dd><p class="first">tracks = Track.objects.genre_table(self.genre_id)</p>
-<p class="last">print(tracks)</p>
-</dd>
-</dl>
-</dd>
-</dl>
 </dd></dl>
 
 </div>
@@ -1192,7 +1180,6 @@ genre=genre)</div></blockquote>
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">music_store package</a><ul>
-<li><a class="reference internal" href="#submodules">Submodules</a></li>
 <li><a class="reference internal" href="#module-music_store.admin">music_store.admin module</a></li>
 <li><a class="reference internal" href="#module-music_store.apps">music_store.apps module</a></li>
 <li><a class="reference internal" href="#module-music_store.models">music_store.models module</a></li>
@@ -1210,6 +1197,7 @@ genre=genre)</div></blockquote>
   <li><a href="index.html">Documentation overview</a><ul>
   <li><a href="modules.html">music_store</a><ul>
       <li>Previous: <a href="modules.html" title="previous chapter">music_store</a></li>
+      <li>Next: <a href="testing.html" title="next chapter">Frontend Testing</a></li>
   </ul></li>
   </ul></li>
 </ul>

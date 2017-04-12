@@ -71,7 +71,7 @@ WSGI_APPLICATION = 'MusicID.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
-
+database_name = os.path.join(BASE_DIR, 'Chinook_Sqlite.sqlite')
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',

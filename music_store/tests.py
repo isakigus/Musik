@@ -1,28 +1,25 @@
 from django.test import TestCase, Client
 from music_store.util import Paginator
-from music_store.models import Track, Album, Artist, Genre
+from music_store.models import Track, Artist
+from unittest.mock import MagicMock
 
 client = Client()
 
-"""
+
 class TestModels(TestCase):
-    def setUp(self):
-        astist = Artist(name='Space pace')
-        astist.save()
-        genre = Genre(name='Techno Space')
-        genre.save()
-        album = Album(title='One', artist=astist)
-        album.save()
-        Track.objects.create(name='Space country',
-                             album=album,
-                             genre=genre)
-        self.genre_id = genre.id
+    def test_tracks_query(self):
+        query_result = {'avg': 262851.6153846154, 'name': 'Velvet Revolver'}
+        Track.objects.genre_table = MagicMock(return_value=query_result)
+        Track.objects.genre_table(2)
+        Track.objects.genre_table.assert_called_with(2)
 
-    def test_tacks_query(self):
-        tracks = Track.objects.genre_table(self.genre_id)
+    def test_avg_song_length_by_genre_query(self):
+        query_result = {'avg': 262851.6153846154, 'name': 'Velvet Revolver'}
+        Artist.objects.avg_song_length_by_genre = MagicMock(
+            return_value=query_result)
+        Artist.objects.avg_song_length_by_genre(1)
+        Artist.objects.avg_song_length_by_genre.assert_called_with(1)
 
-        print(tracks)
-"""
 
 class TestViews(TestCase):
     def test_get_genres_list_response(self):

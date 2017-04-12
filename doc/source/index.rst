@@ -6,13 +6,17 @@
 Welcome to MusiK  documentation!
 ================================
 
+.. image:: _static/music.png
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-
+   solution
+   installation
+   build_docs
    modules
-
+   testing
 
 
 Indices and tables
