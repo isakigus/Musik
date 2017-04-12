@@ -5,7 +5,6 @@ Explicación de la solución
    :maxdepth: 2
 
 La solución consta de un aplicación Django para el backend y Angular y D3 para el frontend.
-He documentado el proyecto con Sphinx, utilizando autodoc y manualmente.
 
 He utilizado python 3.5 pero puede correr en 2.7 también.
 
@@ -17,6 +16,9 @@ en la documentación se incluye un iframe con los test de frontend. Los test est
 
 He utilidado github como respositorio y github pages para alojar esta ayuda.
 He utilidado Travis CI para correr los test de manera automática y coverall para ver la covertura de código.
+
+He documentado el proyecto con Sphinx, utilizando autodoc y manualmente.
+Faltaria mejorar la documentacion de código de backend y crear la de frontend.
 
 La base de datos y modelos la he generado con la funcionalidad de InspectDB
 

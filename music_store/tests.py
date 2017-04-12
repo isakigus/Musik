@@ -1,7 +1,11 @@
 from django.test import TestCase, Client
 from music_store.util import Paginator
 from music_store.models import Track, Artist
-from unittest.mock import MagicMock
+
+try:
+    from unittest.mock import MagicMock
+except ImportError:
+    from mock import MagicMock
 
 client = Client()
 
