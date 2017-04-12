@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+    <link rel="stylesheet" href="css/music.css">
+    <link rel="stylesheet" href="css/darky.css">
+    <title>Musik</title>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- header -->
+    <div class="row animated fadeInDown">
+        <h1 class="text-center display-1"><I>Music App</h1>
+        <hr/>
+    </div>
+
+    <div class="row">
+        <div ng-app="music" ng-controller="mainCtrl">
+
+            <!-- intro -->
+            <ms-intro id="intro"></ms-intro>
+
+            <!-- list   -->
+            <ms-genres></ms-genres>
+
+            <!-- chart -->
+            <ms-graph></ms-graph>
+
+            <!-- table -->
+            <ms-table></ms-table>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="row animated fadeInUp">
+        <hr/>
+        <h2 class="text-center display-3"> ID 2017 </h2>
+    </div>
+    <!-- app -->
+</div>
+<script src="/app/scripts/app.js"></script>
+</body>
+</html>

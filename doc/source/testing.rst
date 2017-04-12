@@ -6,4 +6,4 @@ Frontend Testing
 
 .. raw:: html
 
-   <iframe src="../app/test.html" height="600px" width="100%"></iframe>
+   <iframe src="_static/app/test.html" height="600px" width="100%"></iframe>
