@@ -12,7 +12,7 @@ Para el testing de backend he utilizado unittest de Django y para el frontend Ja
 en la documentación se incluye un iframe con los test de frontend. Los test están en
    Music/app/scripts/tests_app.js
 
-   `Jasmine tests <_static/app/test.html>`_
+   `Jasmine tests <https://isakigus.github.io/Musik/_static/app/test.html>`_
 
 He utilidado github como respositorio y github pages para alojar esta ayuda.
 He utilidado Travis CI para correr los test de manera automática y coverall para ver la covertura de código.
