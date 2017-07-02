@@ -1,0 +1,13 @@
+<div class="{{ list_cl }}" ng-show="list_sw">
+    <div class="list-group" ng-repeat="(k,v) in genres_data">
+        <span class="list-group-item animated fadeInRight"><h2>
+            <strong>{{ v }}</strong></h2>
+            <button class="btn btn-primary" ng-click="do_chart(k,v)">
+                artist stats
+            </button>
+            <button class="btn btn-primary" ng-click="do_table(k,1,v)">
+                songs info
+            </button>
+        </span>
+    </div>
+</div>
