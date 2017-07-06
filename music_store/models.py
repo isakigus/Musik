@@ -17,6 +17,7 @@ class Album(models.Model):
 
 
 class ArtistManager(models.Manager):
+
     def avg_song_length_by_genre(self, genre_id):
         with connection.cursor() as cursor:
             cursor.execute("""
@@ -51,7 +52,8 @@ class Customer(models.Model):
     city = models.TextField(db_column='City', blank=True, null=True)
     state = models.TextField(db_column='State', blank=True, null=True)
     country = models.TextField(db_column='Country', blank=True, null=True)
-    postalcode = models.TextField(db_column='PostalCode', blank=True, null=True)
+    postalcode = models.TextField(
+        db_column='PostalCode', blank=True, null=True)
     phone = models.TextField(db_column='Phone', blank=True, null=True)
     fax = models.TextField(db_column='Fax', blank=True, null=True)
     email = models.TextField(db_column='Email')
@@ -75,12 +77,14 @@ class Employee(models.Model):
                                     null=True)
     birthdate = models.DateTimeField(db_column='BirthDate', blank=True,
                                      null=True)
-    hiredate = models.DateTimeField(db_column='HireDate', blank=True, null=True)
+    hiredate = models.DateTimeField(
+        db_column='HireDate', blank=True, null=True)
     address = models.TextField(db_column='Address', blank=True, null=True)
     city = models.TextField(db_column='City', blank=True, null=True)
     state = models.TextField(db_column='State', blank=True, null=True)
     country = models.TextField(db_column='Country', blank=True, null=True)
-    postalcode = models.TextField(db_column='PostalCode', blank=True, null=True)
+    postalcode = models.TextField(
+        db_column='PostalCode', blank=True, null=True)
     phone = models.TextField(db_column='Phone', blank=True, null=True)
     fax = models.TextField(db_column='Fax', blank=True, null=True)
     email = models.TextField(db_column='Email', blank=True, null=True)
@@ -173,6 +177,7 @@ class Playlisttrack(models.Model):
 
 
 class TrackManager(models.Manager):
+
     def genre_table(self, genre_id, ):
         with connection.cursor() as cursor:
             cursor.execute("""
